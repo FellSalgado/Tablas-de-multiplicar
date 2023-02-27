@@ -1,0 +1,86 @@
+:root {
+    --font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    --primary-color: rgb(224, 47, 238);
+    --secondary-color: rgb(76, 160, 252);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 1rem;
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #424245;
+    font-size: 1.2rem;
+}
+
+main {
+    width: min(100% - 15px, 30rem);
+}
+
+.form {
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgb(16 16 16 / 16%);
+}
+
+.form .inputs-flex {
+    display: flex;
+    gap: 1rem;
+}
+
+.form-control, .btn {
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.form-control {
+    width: 100%;
+    border: 2px solid rgba(20 20 22 / 10%);
+}
+
+.form-control:focus {
+    border-color: rgba(8 8 10 / 17%);
+}
+
+.btn {
+    width: 100%;
+    margin-top: 2rem;
+    background: linear-gradient(286deg, var(--secondary-color), var(--primary-color) 76%);
+    background-size: 100%;
+    color: white;
+    font-weight: bold;
+    border: none;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100vw;
+    text-align: center;
+}
+
+@media (max-width: 750px) {
+    .form .inputs-flex {
+        flex-direction: column;
+    }
+}
