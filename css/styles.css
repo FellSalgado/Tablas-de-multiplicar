@@ -1,41 +1,48 @@
 :root {
-    --font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    --font-family: -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue",
+        sans-serif;
     --primary-color: rgb(224, 47, 238);
     --secondary-color: rgb(76, 160, 252);
 }
 
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    outline: 0;
+    outline: none;
+    box-sizing: border-box;
 }
 
 body {
     min-height: 100vh;
-    padding: 1rem;
+    padding: 3rem;
     font-family: var(--font-family);
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
 }
 
 h2 {
     margin-bottom: 1rem;
-    color: #424245;
+    color: rgb(25, 25, 28);
     font-size: 1.2rem;
 }
 
 main {
-    width: min(100% - 15px, 30rem);
+    width: min(100% - 15px, 40rem);
 }
 
 .form {
     width: 100%;
     background-color: white;
+    border-radius: 6px 6px 0 0;
+    position: relative;
+    z-index: 1;
+}
+
+.form,
+.respuesta {
     padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 0 30px rgb(16 16 16 / 16%);
+    border: 1px solid rgb(230, 225, 235);
 }
 
 .form .inputs-flex {
@@ -43,32 +50,51 @@ main {
     gap: 1rem;
 }
 
-.form-control, .btn {
-    padding: 0.5rem 1rem 0.5rem 1rem;
+.form-control,
+.btn {
+    padding: 0.5rem 1.4rem 0.5rem 1.4rem;
     border-radius: 5px;
 }
 
 .form-control {
     width: 100%;
-    border: 2px solid rgba(20 20 22 / 10%);
+    border: 1px solid rgb(50, 50, 58, .2);
 }
 
 .form-control:focus {
-    border-color: rgba(8 8 10 / 17%);
+    border-color: rgb(30, 30, 38, .8);
 }
 
 .btn {
     width: 100%;
-    margin-top: 2rem;
-    background: linear-gradient(286deg, var(--secondary-color), var(--primary-color) 76%);
-    background-size: 100%;
-    color: white;
     font-weight: bold;
-    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
-.btn:hover {
-    cursor: pointer;
+.btn-mostrar {
+    margin-top: 2rem;
+    background: linear-gradient(
+        286deg,
+        var(--secondary-color),
+        var(--primary-color) 76%
+    );
+    background-size: 100%;
+    color: white;
+}
+
+.btn-limpiar {
+    margin-top: 1rem;
+    background-color: transparent;
+    border: 1px solid rgb(230, 225, 235);
+}
+
+.respuesta {
+    max-height: 260px;
+    overflow-y: auto;
+    margin: -1rem 0;
+    padding-top: 2rem;
+    border-radius: 0 0 6px 6px;
 }
 
 footer {
